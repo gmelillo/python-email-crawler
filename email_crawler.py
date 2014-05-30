@@ -214,6 +214,10 @@ if __name__ == "__main__":
             file.close()
             logger.info("All domains saved to ./data/domains.csv")
             logger.info("="*40)
+        elif (sys.argv[1].lower() == '--add-query') or (sys.argv[1].lower() == '-a'):
+            crawl_step_one(sys.argv[2].lower())
+        elif (arg == '--run') or (arg == '-r'):
+            crawl_step_two()
         else:
             # Crawl the supplied keywords!
             crawl(arg)
